@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Book Collection</title>
+    <link rel="stylesheet" href="/styles/reset.css">
+    <link rel="stylesheet" href="/styles/base.css">
+    <link rel="stylesheet" href="/styles/layout.css">
+    <link rel="stylesheet" href="/styles/module.css">
+</head>
+
+<body>
+    <header>
+        <h1>Best books!</h1>
+        <section id="heroImage"><img src="https://www.freeiconspng.com/uploads/book-icon--icon-search-engine-6.png"
+                alt=""></section>
+
+    </header>
+    <main>
+        <div id="container">
+            <h4>Search by Title or Author</h4>
+            <form action="/searches" method="POST">
+                <input type="text" name="search" placeholder="Enter a title or author" required>
+                <fieldset>
+                    <div id="inline">
+                        <label for="title">
+                            <span>Title</span>
+                            <input type="radio" name="searchBy" value="title" required>
+                        </label>
+                </fieldset>
+                <fieldset>
+                    <label for="author">
+                        <span>Author</span>
+                        <input type="radio" name="searchBy" value="author" required>
+                    </label>
+        </div>
+        </fieldset>
+        <button type="submit">Search the Google Books API</button>
+        </form>
+        </div>
+    </main>
+</body>
+
+</html>
