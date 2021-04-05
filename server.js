@@ -30,8 +30,8 @@ let bookArray=[];
 function Book(info) {
     const placeholderImage = 'https://i.imgur.com/J5LVHEL.jpg';
     this.title = info.title || 'No title available';
-    this.image_url = `https://books.google.com/books/content?id=${info.id}&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api`;
-    this.author=info.author || 'No author available';
+    this.image_url = info.imageLinks? info.imageLinks.thumbnail:'https://i.imgur.com/J5LVHEL.jpg';
+    this.author=info.authors || 'No author available';
     this.description=info.description || 'No description available';
     bookArray.push(this);
 
