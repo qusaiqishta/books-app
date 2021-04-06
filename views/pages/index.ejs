@@ -4,19 +4,19 @@
     <%- include('../layout/header') %>
 
     <main>
-        <section>
+        <section id="card">
             <% booksList.forEach(book => { %>
                 <section id="homePageBooks">
                     <p><br>Title: <%= book.title %></p><br><br>
                     <img src="<%= book.image_url %>"><br><br>
                     <p>Author: <%= book.author %></p><br><br>
-                    <p>ISBN: <%= book.isbn %></p><br><br>
-                    <p id="description"><p id="des">Description: </p> <br><br><%= book.description %></p><br>
-                    <p >Number of books in your bookshelf: <%= booksCount %></p>
-                   
+                    <a href='/books/<%= book.id %>' target="_blank" rel="noopener noreferrer">View details</a>
+                    
                 </section>
+                <br>
                 <% }); %>
-        </section>
+                
+                <section id="shelf" >Number of books in your bookshelf: <%= booksCount %></section>
        
    
         
