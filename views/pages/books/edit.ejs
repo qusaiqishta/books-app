@@ -1,0 +1,37 @@
+<button onclick="handle(this)">Update Details</button>
+<script>
+    function handle(element) {
+        const formElement = document.getElementsByTagName('form');
+        formElement.item(0).style.display = 'block';
+        formElement.item(1).style.display = 'block';
+        element.style.display = "none";
+    }
+</script>
+<section id="editDetails"></section>
+<form action="/books/<%= book.id%>?_method=DELETE" method="POST"style='display: none;'>
+    <input type="hidden" value="<%= book.id %>">
+    <input type="submit" value="Delete Book">
+</form>
+<section id="updateForm">
+
+<form  action="/books/<%=book.id%>?_method=PUT" method="POST" style='display: none;'>
+    <fieldset>
+        <legend>Update Book</legend>
+        <label for="Book Title">Book Title</label>
+        <input type="text" name="title" value="<%= book.title %>" ><br>
+        <label for="author">Author Name</label>
+        <input type="text" name="author" value="<%= book.author %>" ><br>
+
+        <input name="image_url" value="<%= book.image_url %>" class="hidden" >
+        <label for="isbn">ISBN</label>
+        <input type="text" name="isbn" value="<%= book.isbn %>" ><br>
+        <label for="description">Description</label>
+        <input type="text" name="description" value="<%= book.description%>"><br>
+        <label for="shelf">Book Shelf</label>
+ 
+        <input type="text" name="shelf" value="<%= book.shelf %>" class="hidden">
+        <br>
+        <input style="transform: translate(-250px);" type="submit" value="Update book">
+    </fieldset>
+</form>
+</section>
