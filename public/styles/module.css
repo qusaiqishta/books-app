@@ -39,3 +39,38 @@ button {
       margin-left: 500px;
       margin-top: 30px;
   }
+  
+
+  #homePageBooks{
+    text-align: center;
+    box-sizing: border-box ;
+    transform: translate(300px);
+  }
+#des{
+  transform: translate(15px); 
+}
+  #homePage{
+    text-align: center;
+    transform: translate(0, -300px);
+    font-size: x-large;
+  }
+#description{
+  text-align: justify;
+}
+
+#addbutton{
+ 
+  transform: translate(-300px,30px);
+
+}
+
+.hidden{
+  display: none;
+}
+
+#results{
+  text-align: center;
+  font-size: xx-large;
+  font-weight: bold;
+  margin-top: 20px;
+}

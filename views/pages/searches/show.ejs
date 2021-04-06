@@ -1,42 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="/styles/reset.css">
-    <link rel="stylesheet" href="/styles/base.css">
-    <link rel="stylesheet" href="/styles/layout.css">
-    <link rel="stylesheet" href="/styles/module.css">
-</head>
-<body>
-    <header>
-        <h1>Best books!</h1>
-        <section id="heroImage">
-            <img src="https://www.freeiconspng.com/uploads/book-icon--icon-search-engine-6.png" alt="">
-        </section>
-    </header>
-    <main >
-        <section style=" text-align: center;
-        font-size: xx-large;
-        font-weight: bold; margin-left: 500px; margin-top: 20px;" id="results">Search Results</section>
-        
-       <% searchResults.forEach(book=>{ %>
-        <section class="book-template">
-            <p>Title:<%= book.title %></p> <br>
-            <img src="<%= book.image_url %>"><br>
-            <p>Autor: <%= book.author %> </p><br>
-            <p>Description: <%= book.description %></p> <br>
-        </section>
-        
-        <% }); %>
-      
+<%- include('../../layout/head') %>
+
+    <body>
+        <%- include('../../layout/header') %>
+
+            <main>
+                <section id="results">Search Results</section>
+
+                <% searchResults.forEach(book=>{ %>
+                    <section class="book-template">
+                        <p>Title:<%= book.title %>
+                        </p> <br>
+                        <img src="<%= book.image_url %>"><br>
+                        <p>Autor: <%= book.author %>
+                        </p><br>
+                        <p>Description: <%= book.description %>
+                        </p> <br>
+
+                        <form action='/books' method="POST">
+                            <input name="title" value="<%= book.title %>" class="hidden">
+                            <input name="author" value="<%= book.author %>" class="hidden">
+                            <input name="description" value="<%= book.description %>" class="hidden">
+                            <input name="image_url" value="<%= book.image_url %>" class="hidden">
+                            <input name="isbn" value="<%= book.isbn %>" class="hidden">
+
+                            <input name="shelf" value="<%= book.shelf %>" class="hidden">
+                            <button id="addbutton" type="submit">Select This Book</button>
+                        </form>
+                    </section>
+
+                    <% }); %>
 
 
 
 
-    </main>
-    
-</body>
+
+            </main>
+
+    </body>
+
 </html>

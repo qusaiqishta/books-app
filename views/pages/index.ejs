@@ -1,21 +1,24 @@
 <html lang="en">
-<head>
-    <title>Book Collection</title>
-    <link rel="stylesheet" href="/styles/reset.css">
-    <link rel="stylesheet" href="/styles/base.css">
-    <link rel="stylesheet" href="/styles/layout.css">
-    <link rel="stylesheet" href="/styles/module.css">
-</head>
+<%- include('../layout/head') %>
 <body>
-    <header>
-        <h1>Best books!</h1>
-        <section id="heroImage">
-            <img src="https://www.freeiconspng.com/uploads/book-icon--icon-search-engine-6.png" alt="">
-        </section>
-        <section id="homePage">Home page</section>
-    </header>
+    <%- include('../layout/header') %>
+
     <main>
-        <p id="para"> Books Application</p>
+        <section>
+            <% booksList.forEach(book => { %>
+                <section id="homePageBooks">
+                    <p><br>Title: <%= book.title %></p><br><br>
+                    <img src="<%= book.image_url %>"><br><br>
+                    <p>Author: <%= book.author %></p><br><br>
+                    <p>ISBN: <%= book.isbn %></p><br><br>
+                    <p id="description"><p id="des">Description: </p> <br><br><%= book.description %></p><br>
+                    <p >Number of books in your bookshelf: <%= booksCount %></p>
+                   
+                </section>
+                <% }); %>
+        </section>
+       
+   
         
     </main>
 </body>

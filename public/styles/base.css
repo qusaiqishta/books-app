@@ -1,12 +1,15 @@
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300&family=Playfair+Display&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Architects+Daughter&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@0,400;0,500;1,400&family=Architects+Daughter&family=Bree+Serif&family=Kiwi+Maru:wght@300;400&family=Righteous&family=RocknRoll+One&display=swap');
+
 *{
     box-sizing: border-box;
 }
 
 body{
     background-color:wheat;
-    font-family: 'Noto Sans KR', sans-serif;
-        font-size: x-large;
+    font-family: 'Alegreya', serif;
+    font-size: x-large;
         text-align: center;
 }
 
